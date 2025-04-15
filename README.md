@@ -27,9 +27,7 @@ The script generates a CSV file (nasdaq_valuation_scan.csv) with these columns:
     - 1 - 4 Fair
     - 4 < Expensive
 
-4. **PEG** ( Price/Earnings-to-Growth ) 
-
-*Formula:* PEG = (P/E Ratio) ÷ Annual EPS Growth Rate
+4. **PEG** ( Price/Earnings-to-Growth + Annual EPS Growth Rate) 
 *What It Measures:*
 - Whether a stock's price is justified by its earnings growth
 - Combines value (P/E) with growth potential
