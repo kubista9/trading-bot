@@ -35,9 +35,9 @@ The script generates a CSV file (nasdaq_valuation_scan.csv) with these columns:
 5. **D/E** ( Debt-to-Equity ratio )
     - 0.5 > Low debt
     - 0.5 - 2 Moderate leverage
-    - 2 < High risk >
+    - 2 < High risk 
 
 6. **FCF** ( Free Cash Flow Yield )
     - 8% < Strong value
     - 4 - 8% Attractive
-    - 4% > Expensive (unless high growth)
+    - 4% > Expensive ( unless high growth )
