@@ -17,12 +17,27 @@ The script generates a CSV file (nasdaq_valuation_scan.csv) with these columns:
     - 15 - 25 Fair
     - 25 < Expensive 
 
-2. P/B ( Price-to-Book ratio ) <1=Cheap, 1-3=Fair, >3=Expensive
+2. **P/B** ( Price-to-Book ratio ) 
+    - 1 > Cheap
+    - 1 - 3 Fair
+    - 3 < Expensive
 
-3. P/S ( Price-to-Sales ratio )	<1=Cheap, 1-4=Fair, >4=Expensive
+3. **P/S** ( Price-to-Sales ratio )	
+    - 1 > Cheap
+    - 1 - 4 Fair
+    - 4 < Expensive
 
-4. PEG ( Price/Earnings-to-Growth ) < < 1 = Potentially undervalued, 1-2 = Fairly valued, > 2 = Potentially overvalued >
+4. **PEG** ( Price/Earnings-to-Growth ) 
+    - 1 > Potentially undervalued
+    - 1 - 2 Fairly valued
+    - 2 < Potentially overvalued
 
-5. D/E ( Debt-to-Equity ratio ) < < 0.5 = Low debt, 0.5-2 = Moderate leverage, > 2 = High risk >
+5. **D/E** ( Debt-to-Equity ratio )
+    - 0.5 > Low debt
+    - 0.5 - 2 Moderate leverage
+    - 2 < High risk >
 
-6. FCF ( Free Cash Flow Yield ) < > 8% = Strong value, 4-8% = Attractive, < 4% = Expensive (unless high growth) >
+6. **FCF** ( Free Cash Flow Yield )
+    - 8% < Strong value
+    - 4 - 8% Attractive
+    - 4% > Expensive (unless high growth)
