@@ -7,5 +7,6 @@ This Python script scans NASDAQ-listed stocks and evaluates whether they're unde
 ```bash
 pip install yfinance pandas numpy tqdm
 
+## 🚀 How to Run
 ```bash
 python3 stock_valuation_scanner_NASDAQ.py
