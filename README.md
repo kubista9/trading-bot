@@ -13,9 +13,9 @@ This Python script scans NASDAQ-listed stocks and evaluates whether they're unde
 The script generates a CSV file (nasdaq_valuation_scan.csv) with these columns:
 
 1. **P/E** ( Price-to-Earnings ratio ) 
-    - <15 = Cheap 
-    - 15-25 = Fair
-    - '>' 25 = Expensive
+    - 15 > Cheap 
+    - 15 - 25 Fair
+    - 25 < Expensive 
 
 2. P/B ( Price-to-Book ratio ) <1=Cheap, 1-3=Fair, >3=Expensive
 
