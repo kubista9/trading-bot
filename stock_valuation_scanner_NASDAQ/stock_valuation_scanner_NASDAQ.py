@@ -4,11 +4,13 @@ import numpy as np
 from tqdm import tqdm
 
 def get_nasdaq_tickers():
-    """Fetch NASDAQ-listed company symbols"""
-    url = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/nasdaq/nasdaq_tickers.txt"
+    """Fetch live NASDAQ symbols from NASDAQ API"""
+    url = "https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=10000"
+    headers = {'User-Agent': 'Mozilla/5.0'}
     try:
-        nasdaq_tickers = pd.read_csv(url, header=None)[0].tolist()
-        return nasdaq_tickers
+        response = requests.get(url, headers=headers)
+        data = response.json()
+        return [row['symbol'] for row in data['data']['rows']]
     except:
         print("Failed to fetch NASDAQ tickers. Using a sample list instead.")
         return ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'TSLA', 'NVDA', 'PYPL', 'ADBE', 'INTC']
