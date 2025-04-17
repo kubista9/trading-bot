@@ -148,8 +148,8 @@ def scan_nasdaq():
         
         print(f"Scanning {len(tickers)} NASDAQ companies...")
         
-        # Limit to 50 for demo purposes, remove in production
-        for ticker in tqdm(tickers[:50]):  
+        # Process all tickers instead of limiting to 50
+        for ticker in tqdm(tickers):  # Removed the [:50] slice
             analysis = analyze_stock(ticker)
             if analysis:
                 results.append(analysis)
