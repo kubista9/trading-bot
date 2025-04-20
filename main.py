@@ -1,10 +1,10 @@
-# main.py
 """Main entry point for the NASDAQ stock valuation scanner."""
 
 import sys
 from tqdm import tqdm
 from utils.api_utils import get_nasdaq_tickers
 from analysis.valuation import analyze_stock
+from analysis.industry_metrics import IndustryMetricsCalculator
 from utils.data_utils import save_results_to_csv, display_sample_results
 from config import OUTPUT_FILE, SAMPLE_SIZE
 
@@ -14,11 +14,15 @@ def scan_nasdaq():
         tickers = get_nasdaq_tickers()
         results = []
         
+        # Initialize industry metrics calculator
+        industry_calculator = IndustryMetricsCalculator()
+        industry_calculator.initialize_with_sample(tickers)
+        
         print(f"Scanning {len(tickers)} NASDAQ companies...")
         
         # Process all tickers
         for ticker in tqdm(tickers):
-            analysis = analyze_stock(ticker)
+            analysis = analyze_stock(ticker, industry_calculator)
             if analysis:
                 results.append(analysis)
         
@@ -34,12 +38,3 @@ def scan_nasdaq():
     except Exception as e:
         print(f"\nFatal error during scan: {str(e)}")
         return None
-
-if __name__ == "__main__":
-    try:
-        results_df = scan_nasdaq()
-        if results_df is not None:
-            display_sample_results(results_df, SAMPLE_SIZE)
-    except Exception as e:
-        print(f"\nScript failed: {str(e)}")
-        sys.exit(1)
